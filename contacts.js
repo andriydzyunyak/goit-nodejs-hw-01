@@ -10,18 +10,18 @@ async function listContacts() {
   return contacts;
 }
 
-async function getContactById(contactId) {
+async function getContactById(id) {
   const contacts = await listContacts();
-  const result = contacts.find((item) => item.contactId === contactId);
+  const result = contacts.find((item) => item.id === id);
   if (!result) {
     return null;
   }
   return result;
 }
 
-async function removeContact(contactId) {
+async function removeContact(id) {
   const contacts = await listContacts();
-  const idx = contacts.findIndex((item) => item.contactId === contactId);
+  const idx = contacts.findIndex((item) => item.id === id);
   if (idx === -1) {
     return null;
   }

@@ -1,15 +1,13 @@
-console.log("Hello friends on NodeJS!");
-
 const contactsOperations = require("./contacts.js");
 
 const { Command } = require("commander");
 const program = new Command();
 program
   .option("-a, --action <type>", "choose action")
-  .option("-i, --id <type>", "user id")
-  .option("-n, --name <type>", "user name")
-  .option("-e, --email <type>", "user email")
-  .option("-p, --phone <type>", "user phone");
+  .option("-i, --id <type>", "contact id")
+  .option("-n, --name <type>", "contact name")
+  .option("-e, --email <type>", "contact email")
+  .option("-p, --phone <type>", "contact phone");
 
 program.parse(process.argv);
 
